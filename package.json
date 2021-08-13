@@ -1,5 +1,5 @@
 {
-  "name": "vue-form-bootstrap-validation",
+  "name": "v-formlize",
   "version": "1.0.0",
   "description": "Classe para validar informações",
   "main": "index.js",
