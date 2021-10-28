@@ -109,6 +109,7 @@ export default {
             <p>Ex: const field = new Validator(["cnpj"]);</p>
             <p>Ex: const field = new Validator(["min|10"]);</p>
             <p>Ex: const field = new Validator(["max|20"]);</p>
+            <p>Ex: const field = new Validator(["validateDateBr"]);</p>
 		</td>
     </tr>
 </table>

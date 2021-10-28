@@ -64,7 +64,7 @@ class Validations {
         this.min = {
             message: "Quantidade de caractéres incorreto.",
             validate: (value, minValue) => {
-                if (value.length <= minValue) {
+                if (value.length < minValue) {
                     return `${this.min.message} O mínimo deve ser ${minValue}.`;
                 }
                 return null;
@@ -74,12 +74,26 @@ class Validations {
         this.max = {
             message: "Quantidade de caractéres incorreto.",
             validate: (value, maxValue) => {
-                if (value.length >= maxValue) {
+                if (value.length > maxValue) {
                     return `${this.max.message} O máximo deve ser ${maxValue}.`;
                 }
                 return null;
             }
-        }
+        },
+            this.validateDateBr = {
+                message: "Data inválida",
+                validate: (value) => {
+
+                    if (value.length !== 10) return this.validateDateBr.message;
+
+                    const newDate = date.split("/").reverse().join("-");
+                    const dateParsed = Date.parse(newDate);
+
+                    if (isNaN(dateParsed)) return this.validateDateBr.message;
+
+                    return null;
+                }
+            }
     }
 
 
