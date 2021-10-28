@@ -83,15 +83,16 @@ class Validations {
             this.validateDateBr = {
                 message: "Data inválida",
                 validate: (value) => {
+                    if (value) {
+                        if (value.length !== 10) return this.validateDateBr.message;
 
-                    if (value.length !== 10) return this.validateDateBr.message;
+                        const newDate = value.split("/").reverse().join("-");
+                        const dateParsed = Date.parse(newDate);
 
-                    const newDate = date.split("/").reverse().join("-");
-                    const dateParsed = Date.parse(newDate);
+                        if (isNaN(dateParsed)) return this.validateDateBr.message;
 
-                    if (isNaN(dateParsed)) return this.validateDateBr.message;
-
-                    return null;
+                        return null;
+                    }
                 }
             }
     }
